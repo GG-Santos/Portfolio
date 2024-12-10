@@ -222,6 +222,7 @@ svg {
   background-origin: padding-box;
   background-size: 200%;
   -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
