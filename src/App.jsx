@@ -4,18 +4,19 @@ import { GooeyCursor } from './components/GooeyCursor'
 import { ScreenFilter } from './components/ScreenFilter'
 import { IconBar } from './components/IconBar'
 import { HackerConsole } from './components/HackerConsole'
+import { DraggableMenu } from './components/DraggableMenu'
 
 function App() {
   return (
     <>
-      <div className="noise-blur"></div> {/* Changed class to className */}
+      <div className="noise-blur"></div>
       <ScreenFilter />
       <GooeyCursor />
-      <div className="pixel-blur"></div> {/* Changed class to className */}
+      <div className="pixel-blur"></div>
       <NavMenu />
 
       <HackerConsole />
-
+      <DraggableMenu />
       <IconBar />
     </>
   )
