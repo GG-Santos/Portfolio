@@ -1,0 +1,234 @@
+$bg-color-dark: #0e100f;
+$text-color-dark: #f5f5f5;
+$scrollbar-dark: #494949;
+
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+    cursor: none;
+
+}
+body {
+  font-family: "Fira Code";
+  background-color: $bg-color-dark;
+  color: $text-color-dark;
+  overflow-y: scroll;
+
+  cursor: none;
+  scrollbar-width: thin;
+  scrollbar-color: $scrollbar-dark $bg-color-dark;
+}
+
+// Nav Bar
+
+.Tall-Separator {
+  height: 1.2rem;
+  background-color: #5b5b5b;
+}
+
+// Cursor
+
+.ink-cursor {
+    pointer-events: none;
+    position: fixed;
+    display: block;
+    border-radius: 0;
+    transform-origin: center center;
+    mix-blend-mode: difference;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    filter: url("#goo");
+}
+
+.ink-cursor {
+  span {
+    position: absolute;
+    display: block;
+    width: 26px;
+    height: 26px;
+    border-radius: 20px;
+    background-color: #fff;
+    transform-origin: center center;
+    transform: translate(-50%, -50%);
+  }
+}
+
+svg {
+    display: none;
+}
+
+#goo {
+    filter: url(#goo-filter);
+}
+
+@keyframes goo-filter {
+    0% {
+        filter: url(#goo);
+    }
+    100% {
+        filter: url(#goo);
+    }
+}
+
+@media (max-width: 991px) {
+  .ink-cursor {
+    .ink-cursor {
+      span {
+        display: none;
+      }
+    }
+  }
+}
+
+// Screen Filter: Glitch Screen
+
+.scotch-container {
+    animation: spawn 10s ease-in-out forwards;
+  
+    &:hover:after {
+      content: "";
+      position: absolute;
+      background-image: url(https://64.media.tumblr.com/da60c13b478dda09ab90c27e880983b8/tumblr_nd4pwdPKdc1tun3l0o1_1280.gifv);
+      background-size: 40%;
+      height: 100%;
+      width: 100%;
+      background-repeat: repeat;
+      mix-blend-mode: screen;
+      pointer-events: none;
+      opacity: 5%;
+      z-index: 20;
+    }
+  }
+
+// Screen Filter: Top Blur
+
+.pixel-blur {
+    position: fixed;
+    height: 5rem;
+    width: 100%;
+    background-color: transparent;
+    background-image: radial-gradient(transparent 1px, $bg-color-dark 1px);
+    background-size: 4px 4px;
+    backdrop-filter: blur(3px);
+    mask: linear-gradient(rgb(0, 0, 0) 60%, rgba(0, 0, 0, 0) 100%);
+    opacity: 1;
+    z-index: 2; 
+}
+
+// Screen Filter: Noise Background
+
+.noise-blur {
+    position: fixed;
+    background-size: 100px 100px;
+    background-repeat: repeat;
+    background-image: url('https://framerusercontent.com/images/rR6HYXBrMmX4cRpXfXUOvpvpB0.png');
+    border-radius: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0.05;
+    z-index: 1; // Changed from -1 to 1 to ensure visibility
+}
+
+// Icon Bar
+
+.icon {
+    &:hover {
+      cursor: none;
+      transform: scale(1.2);
+      transition: ease-in-out 0.3s;
+    }
+  }
+  
+  .icon-wrapper {
+    display: inline-flex;
+    list-style: none;
+  
+    .icon {
+      position: relative;
+      border-radius: 50%;
+      padding: 15px;
+      margin: 10px;
+      width: 50px;
+      height: 50px;
+      font-size: 18px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  
+      .tooltip {
+        position: absolute;
+        top: 0;
+        font-size: 14px;
+        padding: 5px 8px;
+        border-radius: 5px;
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  
+        &::before {
+          position: absolute;
+          content: "";
+          height: 8px;
+          width: 8px;
+          background: #ffffff;
+          bottom: -3px;
+          left: 50%;
+          transform: translate(-50%) rotate(45deg);
+          transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+      }
+  
+      &:hover .tooltip {
+        top: -45px;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+      }
+    }
+  
+    .icon_item:hover,
+    .icon_item:hover .tooltip,
+    .icon_item:hover .tooltip::before {
+      background: #181b1a;
+      color: #ffffff;
+    }
+  }
+  
+  .icon-right-aligned {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .absolute-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .text-purple-code {
+    color: #a374ff;
+    font-weight: 700;
+  }
+  
+  .blink {
+    animation: blink-animation 1s steps(2, start) infinite;
+  }
+
+  @keyframes blink-animation {
+    to {
+      visibility: hidden;
+    }
+  }
+
