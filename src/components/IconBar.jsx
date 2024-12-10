@@ -8,10 +8,10 @@ export const IconBar = () => {
     <TooltipProvider>
       <footer className="fixed bottom-0 left-0 right-0 flex justify-between items-center p-1" style={{ zIndex: 90 }}>
         <Typewriter />
-        <section id="hide-small" style={{ marginLeft: '1rem' }}>
+        <section id="hide-small" className="text-xs" style={{ marginLeft: '1rem' }}>
           <p className="text-grey-code"> &gt;&gt;<span> </span>
             <span id="typewriter-container" className="inline-block" style={{ width: '200px' }}>
-              <span id="typewriter" className="text-white-code">Game_Developer</span>
+              <span id="typewriter" className="NavText">Game_Developer</span>
               <span className="text-purple-code blink bold">_</span>
             </span>
           </p>

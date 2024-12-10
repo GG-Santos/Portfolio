@@ -29,7 +29,7 @@ export function NavMenu() {
   };
 
   return (
-    <div className="flex justify-end">
+    <div className="flex justify-end NavText text-xs">
       <div className="fixed" style={{ zIndex: 2 }}>
         <NavigationMenu className="pt-5 pr-5">
           <NavigationMenuList>
