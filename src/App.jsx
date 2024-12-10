@@ -2,10 +2,8 @@ import './App.css'
 import { NavMenu } from './components/NavMenu'
 import { GooeyCursor } from './components/GooeyCursor'
 import { ScreenFilter } from './components/ScreenFilter'
-
-import { Typewriter } from './components/Typewriter'
 import { IconBar } from './components/IconBar'
-
+import { HackerConsole } from './components/HackerConsole'
 
 function App() {
   return (
@@ -16,7 +14,8 @@ function App() {
       <div className="pixel-blur"></div> {/* Changed class to className */}
       <NavMenu />
 
-      <Typewriter /> 
+      <HackerConsole />
+
       <IconBar />
     </>
   )

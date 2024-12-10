@@ -10,8 +10,11 @@ html {
 body {
   font-family: "Fira Code";
   background-color: #0e100f;
-  color: #f5f5f5;
+  color: #e0e0e0;
   overflow-y: scroll;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+       user-select: none;
   cursor: none;
   scrollbar-width: thin;
   scrollbar-color: #494949 #0e100f;
@@ -113,7 +116,7 @@ svg {
 
 .icon:hover {
   cursor: none;
-  transform: scale(1.2);
+  transform: scale(1.1);
   transition: ease-in-out 0.3s;
 }
 
@@ -143,7 +146,8 @@ svg {
   border-radius: 5px;
   opacity: 0;
   pointer-events: none;
-  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: none;
+  visibility: hidden;
 }
 .icon-wrapper .icon .tooltip::before {
   position: absolute;
@@ -199,4 +203,15 @@ svg {
   to {
     visibility: hidden;
   }
+}
+#console {
+  color: rgba(160, 160, 160, 0.6274509804);
+}
+#console p {
+  font-family: monospace;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  text-shadow: 0px 0px 5px rgba(160, 160, 160, 0.6274509804);
 }/*# sourceMappingURL=App.css.map */
