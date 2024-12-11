@@ -4,7 +4,8 @@ import { GooeyCursor } from './components/GooeyCursor'
 import { ScreenFilter } from './components/ScreenFilter'
 import { IconBar } from './components/IconBar'
 import { HackerConsole } from './components/HackerConsole'
-import { DraggableMenu } from './components/DraggableMenu'
+import { AlertButtons } from './components/AlertButtons'
+import { BibleVerse } from './components/BibleVerse'
 
 function App() {
   return (
@@ -14,10 +15,12 @@ function App() {
       <GooeyCursor />
       <div className="pixel-blur"></div>
       <NavMenu />
-
       <HackerConsole />
-      <DraggableMenu />
+
+      {/* <BibleVerse />
+      <AlertButtons /> */}
       <IconBar />
+
     </>
   )
 }

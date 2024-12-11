@@ -21,7 +21,6 @@ body {
 }
 
 .NavText {
-  color: rgba(160, 160, 160, 0.6274509804);
   font-style: monospace;
   font-weight: bold;
   text-shadow: 0px 0px 5px rgba(160, 160, 160, 0.6274509804);
@@ -110,6 +109,7 @@ svg {
 }
 
 .noise-blur {
+  pointer-events: none;
   position: fixed;
   background-size: 100px 100px;
   background-repeat: repeat;
@@ -330,4 +330,66 @@ svg {
   background: linear-gradient(-45deg, transparent 0.25rem, var(--hack-hover-background-color) 0);
   transition: width 0.3s ease, left 0.3s ease;
   z-index: -1;
+}
+
+.clock-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  transform: translateX(-10px);
+  scale: 0.6;
+  opacity: 0.4;
+  text-shadow: 0px 0px 5px rgba(160, 160, 160, 0.6274509804);
+}
+
+.clock {
+  position: relative;
+  display: flex;
+  flex-flow: column wrap;
+  width: 300px;
+  height: 100px;
+}
+
+.block {
+  width: 8.3333333333%;
+  height: 20%;
+  color: #474747;
+  transition: 0.4s;
+}
+.block:not(:nth-child(n+16)):nth-child(n+11), .block:not(:nth-child(n+46)):nth-child(n+41) {
+  margin-right: 10px;
+}
+.block:not(:nth-child(n+31)):nth-child(n+26) {
+  margin-right: 20px;
+}
+.block:before {
+  content: attr(data-num);
+  position: relative;
+  display: block;
+  font-size: 16px;
+  width: 100%;
+  height: 100%;
+  line-height: 20px;
+  text-align: center;
+}
+.block:nth-child(-n+10):before {
+  content: "0" attr(data-num);
+}
+.block.active:before {
+  color: whitesmoke;
+  font-weight: 500;
+}
+.block.second:before {
+  color: #ff8300;
+}
+
+.divider {
+  position: absolute;
+  width: 2px;
+  background-color: whitesmoke;
+  height: 60%;
+  top: 20%;
+  left: calc(50% + 19px);
 }/*# sourceMappingURL=App.css.map */

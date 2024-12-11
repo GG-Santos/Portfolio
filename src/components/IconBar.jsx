@@ -11,14 +11,14 @@ export const IconBar = () => {
         <section id="hide-small" className="text-xs" style={{ marginLeft: '1rem' }}>
           <p className="text-grey-code"> &gt;&gt;<span> </span>
             <span id="typewriter-container" className="inline-block" style={{ width: '200px' }}>
-              <span id="typewriter" className="NavText">Game_Developer</span>
+              <span id="typewriter" className="NavText text-white-code">Game_Developer</span>
               <span className="text-purple-code blink bold">_</span>
             </span>
           </p>
         </section>
 
-        <section id="button" className="flex items-center space-x-4 absolute-center">
-          <ul className="icon-wrapper">
+        <section id="button" className="flex items-center space-x-4 justify-center">
+          <ul className="icon-wrapper flex justify-center">
             <Magnetic>
               <li className="icon icon_item">
                 <Tooltip>
@@ -106,7 +106,7 @@ export const IconBar = () => {
           </ul>
         </section>
 
-        <section className="flex items-center space-x-4 icon-wrapper right-aligned" style={{ marginRight: '1rem' }}>
+        <section id="bottom-right" className="flex items-center space-x-4 icon-wrapper justify-end" style={{ marginRight: '1rem', width: '200px' }}>
           <Magnetic>
             <li className="icon icon-right icon_item">
               <Tooltip>
