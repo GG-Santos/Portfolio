@@ -17,8 +17,8 @@ function App() {
       <NavMenu />
       <HackerConsole />
 
-      {/* <BibleVerse />
-      <AlertButtons /> */}
+      <BibleVerse />
+      <AlertButtons />
       <IconBar />
 
     </>

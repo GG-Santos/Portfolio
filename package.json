@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@brunoimbrizi/controlkit": "^0.2.2",
     "@fortawesome/fontawesome-svg-core": "^6.7.1",
     "@fortawesome/free-brands-svg-icons": "^6.7.1",
     "@fortawesome/free-solid-svg-icons": "^6.7.1",
@@ -45,6 +46,7 @@
     "@react-three/fiber": "^8.17.10",
     "@types/canvas-confetti": "^1.6.4",
     "@types/three": "^0.170.0",
+    "browser-detect": "^0.2.28",
     "canvas-confetti": "^1.9.3",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
@@ -66,8 +68,10 @@
     "react-icon-cloud": "^4.1.4",
     "react-resizable-panels": "^2.1.7",
     "react-spring": "^9.7.4",
+    "react-unity-webgl": "^9.6.0",
     "shiki": "^1.24.2",
     "sonner": "^1.7.1",
+    "stats.js": "^0.17.0",
     "tailwind-merge": "^2.5.5",
     "tailwindcss-animate": "^1.0.7",
     "three": "^0.171.0",
