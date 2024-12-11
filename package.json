@@ -53,6 +53,7 @@
     "date-fns": "^3.6.0",
     "embla-carousel-react": "^8.5.1",
     "framer-motion": "^11.13.5",
+    "glslify": "^7.1.1",
     "gsap": "^3.12.5",
     "gsap-trial": "^3.12.5",
     "input-otp": "^1.4.1",
