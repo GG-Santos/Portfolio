@@ -6,11 +6,13 @@ import { IconBar } from './components/IconBar'
 import { HackerConsole } from './components/HackerConsole'
 import { AlertButtons } from './components/AlertButtons'
 import { BibleVerse } from './components/BibleVerse'
+import { ParticleImage } from './components/ParticleImage/ParticleImage'
+
 
 function App() {
   return (
     <>
-      <div className="noise-blur"></div>
+      {/* <div className="noise-blur"></div>
       <ScreenFilter />
       <GooeyCursor />
       <div className="pixel-blur"></div>
@@ -19,8 +21,9 @@ function App() {
 
       <BibleVerse />
       <AlertButtons />
-      <IconBar />
-
+      <IconBar /> */}
+      <ParticleImage />
+      <div className="ParticleImage"></div>
     </>
   )
 }
