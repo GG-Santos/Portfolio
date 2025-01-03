@@ -97,3 +97,22 @@ export const updateCourse: RequestHandler<UPdateCourseParams> = async (req, res,
         }
     }
 };
+
+export const deleteCourse: RequestHandler = async (req, res, next) => {
+    const courseID = req.params.courseID;
+
+    try {
+        if (!mongoose.isValidObjectId(courseID)) {
+            throw createHttpError(400, "Invalid Course ID!");
+        }
+
+        const deletedCourse = await CourseModel.findByIdAndDelete(courseID).exec();
+
+        if (!deletedCourse) {
+            throw createHttpError(404, "Course not found!");
+        }
+        res.status(204).json({ message: "Course deleted successfully", course: deletedCourse });
+    } catch (error) {
+        next(error);
+    }
+};
