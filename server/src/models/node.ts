@@ -12,7 +12,7 @@ const courseSchema = new Schema({
     midterm: { type: String },
     final: { type: String },
     status: { type: String, required: true },
-    modules: { type: Array },
+    modules: { type: [String], default: [] },
 });
 
 type Course = InferSchemaType<typeof courseSchema>;
