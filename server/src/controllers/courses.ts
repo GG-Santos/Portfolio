@@ -1,5 +1,5 @@
 import { RequestHandler } from "express";
-import CourseModel from "../models/node";
+import CourseModel from "../models/course";
 import createHttpError from "http-errors";
 import mongoose from "mongoose";
 import { z } from "zod";
