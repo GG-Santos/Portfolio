@@ -1,16 +1,17 @@
 import "./App.css";
 import { useEffect, useState } from "react";
-import { Course } from "./models/course";
+import { Course as CourseModel } from "./models/course";
+import Course from "./components/courses";
+import * as CourseApi from "./network/courses_api";
 
 function App() {
 
-  const [courses, setCourses] = useState<Course[]>([]);
+  const [courses, setCourses] = useState<CourseModel[]>([]);
 
   useEffect(() => {
     async function loadCourses() {
       try {
-        const response = await fetch("/api/courses", { method: "GET" });
-        const courses = await response.json();
+        const courses = await CourseApi.fetchCourses();
         setCourses(courses);
         
       } catch (error) {
@@ -23,7 +24,9 @@ function App() {
 
   return (
   <>
-    {JSON.stringify(courses)}
+    {courses.map(course => (
+      <Course course={course} key={course._id}/>
+    ))}
   </>
   );
 };
