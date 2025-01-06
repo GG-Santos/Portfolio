@@ -64,11 +64,11 @@ export const createCourse: RequestHandler = async (req, res, next) => {
     }
 }
 
-interface UPdateCourseParams {
+interface UpdateCourseParams {
     courseID: string,
 }
 
-export const updateCourse: RequestHandler<UPdateCourseParams> = async (req, res, next) => {
+export const updateCourse: RequestHandler<UpdateCourseParams> = async (req, res, next) => {
     const courseID = req.params.courseID;
 
     try {

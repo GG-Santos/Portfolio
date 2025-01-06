@@ -43,3 +43,18 @@ export async function createCourse(course: CourseInput): Promise<Course> {
     return response.json();
 
 }
+
+export async function updateCourse(courseID: string, course: CourseInput): Promise<Course> {
+  const response = await fetchData("/api/courses/" + courseID, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(course),
+  });
+  return response.json();
+}
+
+export async function deleteCourse(courseID: string) {
+    await fetchData("/api/courses/" + courseID, { method: "DELETE", });
+}

@@ -1,16 +1,16 @@
 import express from "express";
 import * as CoursesController from "../controllers/courses";
 
-const router = express.Router();
+const coursesRoutes = express.Router();
 
-router.get("/", CoursesController.getCourses);
+coursesRoutes.get("/", CoursesController.getCourses);
 
-router.get("/:courseID", CoursesController.getCourse);
+coursesRoutes.get("/:courseID", CoursesController.getCourse);
 
-router.post("/", CoursesController.createCourse);
+coursesRoutes.post("/", CoursesController.createCourse);
 
-router.patch("/:courseID", CoursesController.updateCourse);
+coursesRoutes.patch("/:courseID", CoursesController.updateCourse);
 
-router.delete("/:courseID", CoursesController.deleteCourse);
+coursesRoutes.delete("/:courseID", CoursesController.deleteCourse);
 
-export default router;
+export default coursesRoutes;
