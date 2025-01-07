@@ -1,34 +1,44 @@
 import "./App.css";
 import { useEffect, useState } from "react";
-import { Course as CourseModel } from "./models/course";
-import Course from "./components/courses";
-import * as CourseApi from "./network/courses_api";
+import { Version as VersionModel } from "./models/version";
+import VersionID from "./components/version";
+import * as VersionApi from "./network/version_api";
 
-function App() {
+function Version() {
 
-  const [courses, setCourses] = useState<CourseModel[]>([]);
+    const [versions, setVersion] = useState<VersionModel[]>([]);
+  
+    useEffect(() => {
+      async function loadVersion() {
+        try {
+          const version = await VersionApi.fetchVersion();
+          setVersion(Array.isArray(version) ? version : [version]);
+          
+        } catch (error) {
+          console.error(error);
+          alert(error); 
+        }
+      }
+      loadVersion();
+    }, []);
 
-  useEffect(() => {
-    async function loadCourses() {
+    const handleUpdateVersion = async (updatedVersion: VersionModel) => {
       try {
-        const courses = await CourseApi.fetchCourses();
-        setCourses(courses);
-        
+        const newVersion = await VersionApi.updateVersion(updatedVersion);
+        setVersion([newVersion]);
       } catch (error) {
         console.error(error);
-        alert(error); 
+        alert(error);
       }
-    }
-    loadCourses();
-  }, []);
-
-  return (
-  <>
-    {courses.map(course => (
-      <Course course={course} key={course._id}/>
-    ))}
-  </>
-  );
-};
-
-export default App;
+    };
+  
+    return (
+    <>
+      {versions.map(version => (
+        <VersionID version={version} key={version._id} onUpdate={handleUpdateVersion} />
+      ))}
+    </>
+    );
+  };
+  
+  export default Version;

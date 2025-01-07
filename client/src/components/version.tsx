@@ -25,7 +25,7 @@ const VersionID = ({ version, onUpdate }: VersionProps) => {
     onUpdate({ ...version, major: version.major + 1, minor: 0, patch: 0 });
   };
 
-  const decrementPatch = () => {
+  const revertVersion = () => {
     if (version.patch > 0) {
       onUpdate({ ...version, patch: version.patch - 1 });
     }
@@ -38,7 +38,7 @@ const VersionID = ({ version, onUpdate }: VersionProps) => {
           VITE × MERN
         </h1>
         <p className="font-mono text-sm text-slate-600 mb-2">
-          Project Loxodonta v{version.major}.{version.minor}.{version.patch}
+          Project v{version.major}.{version.minor}.{version.patch}
         </p>
         <div className="flex items-center justify-center my-4">
           <a href="https://www.mongodb.com" target="_blank" rel="noopener noreferrer">
@@ -60,7 +60,7 @@ const VersionID = ({ version, onUpdate }: VersionProps) => {
         <div className="my-4">
           <button
             className="rounded text-blue-400 bg-slate-800 mx-2 py-2 px-4"
-            onClick={decrementPatch}
+            onClick={revertVersion}
           >
             Revert
           </button>
