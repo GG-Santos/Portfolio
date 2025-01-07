@@ -1,11 +1,11 @@
-import reactLogo from "../assets/svg/react.svg";
+import reactLogo from "../../assets/svg/react.svg";
 import viteLogo from "/vite.svg";
-import mongodbLogo from "../assets/svg/mongodb.svg";
-import nodeLogo from "../assets/svg/node.svg";
-import expressLogo from "../assets/svg/express.svg";
-import "../App.css";
+import mongodbLogo from "../../assets/svg/mongodb.svg";
+import nodeLogo from "../../assets/svg/node.svg";
+import expressLogo from "../../assets/svg/express.svg";
+import "../../App.css";
 // import useCounterStore from "../lib/store";
-import { Version as VersionModel } from "../models/version";
+import { Version as VersionModel } from "../../models/version";
 
 interface VersionProps {
   version: VersionModel;

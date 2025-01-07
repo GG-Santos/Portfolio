@@ -1,8 +1,8 @@
 import "./App.css";
 import { useEffect, useState } from "react";
 import { Version as VersionModel } from "./models/version";
-import VersionID from "./components/version";
-import * as VersionApi from "./network/version_api";
+import VersionID from "./components/core/version";
+import * as VersionApi from "./api/version_api";
 
 function Version() {
 
