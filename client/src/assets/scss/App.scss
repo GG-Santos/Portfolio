@@ -11,12 +11,28 @@
   padding: 1.5em;
   will-change: filter;
   transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+
+  &.mongo:hover, 
+  &.node:hover {
+    filter: drop-shadow(0 0 2em #3fd546aa);
+  }
+
+  &.express:hover {
+    filter: drop-shadow(0 0 2em #ffffffaa);
+  }
+
+  &.react:hover {
+    filter: drop-shadow(0 0 2em #517dffaa);
+  }
+
+  &.vite {
+    height: 7em;
+    width: 7em;
+
+    &:hover {
+      filter: drop-shadow(0 0 2em #602fdbaa);
+    }
+  }
 }
 
 @keyframes logo-spin {

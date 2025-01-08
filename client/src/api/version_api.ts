@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { Version } from './../models/version';
+import { Version } from '@/models/version';
 
 const axiosInstance = axios.create({
   baseURL: '/api',

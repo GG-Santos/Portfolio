@@ -10,9 +10,18 @@ const moodStates = [
     { value: 100, label: "Very Good", color: "#10B981" },
 ] as const;
 
-function EmotionFace({ value }: { value: number }) {
-    const getFaceConfig = () => {
-        if (value === 0) {
+interface FaceConfig {
+    color: string;
+    eyes: {
+        left: string;
+        right: string;
+    };
+    mouth: string;
+}
+
+function getFaceConfig(value: number): FaceConfig {
+    switch (value) {
+        case 0:
             return {
                 color: "#EF4444",
                 eyes: {
@@ -21,9 +30,7 @@ function EmotionFace({ value }: { value: number }) {
                 },
                 mouth: "M8 16 Q12 13 16 16",
             };
-        }
-
-        if (value === 50) {
+        case 50:
             return {
                 color: "#F59E0B",
                 eyes: {
@@ -32,19 +39,20 @@ function EmotionFace({ value }: { value: number }) {
                 },
                 mouth: "M8 16 L16 16",
             };
-        }
+        default:
+            return {
+                color: "#10B981",
+                eyes: {
+                    left: "M6 10 Q8 12 10 10",
+                    right: "M14 10 Q16 12 18 10",
+                },
+                mouth: "M8 16 Q12 19 16 16",
+            };
+    }
+}
 
-        return {
-            color: "#10B981",
-            eyes: {
-                left: "M6 10 Q8 12 10 10",
-                right: "M14 10 Q16 12 18 10",
-            },
-            mouth: "M8 16 Q12 19 16 16",
-        };
-    };
-
-    const face = getFaceConfig();
+function EmotionFace({ value }: { value: number }) {
+    const face = getFaceConfig(value);
 
     return (
         <svg
@@ -83,8 +91,8 @@ function EmotionFace({ value }: { value: number }) {
     );
 }
 
-export default function Input_10() {
-    const [value, setValue] = useState(100);
+export default function Mood() {
+    const [value, setValue] = useState<number>(100);
 
     const adjustValue = (direction: "left" | "right") => {
         const currentIndex = moodStates.findIndex(
